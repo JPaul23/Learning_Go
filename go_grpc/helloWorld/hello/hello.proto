@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "./;hello";
+
+package helloworld;
+
+
+service Greeter {
+    rpc SayHello(HelloRequest) returns (HelloReply);
+}
+
+message HelloRequest {
+    string order_id = 1;
+  double amount = 2;
+  string payment_method = 3;
+}
+
+message HelloReply {
+    bool success = 1;
+  string message = 2;
+}
